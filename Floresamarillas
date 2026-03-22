@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Alexander 💛</title>
+
+<style>
+:root {
+  --letter-love: 200px;
+  --letter: #fff8dc;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(to top, #fff7a8, #ffe066);
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Botón */
+button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: #ffcc00;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Carta */
+.Flores_Amarillas {
+  position: absolute;
+  width: 80%;
+  font-size: 2rem;
+  font-family: "Te Amo", cursive;
+  height: var(--letter-love);
+  transform: translate(-50%, -50%) scale(0);
+  background: var(--letter);
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  z-index: 2;
+  transition: 0.5s;
+}
+
+/* Mostrar carta */
+.show {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Flores */
+.flower {
+  position: absolute;
+  font-size: 2rem;
+  animation: float 10s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(1);
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.5);
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<button onclick="abrir()">💌 Ábreme</button>
+
+<div id="carta" class="Flores_Amarillas">
+  🌼 Alexander, estas flores amarillas son para ti 💛<br><br>
+  Eres alguien muy especial ✨
+</div>
+
+<!-- Música -->
+<audio id="musica" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+</audio>
+
+<!-- Flores -->
+<div class="flower" style="left:10%; animation-delay:0s;">🌼</div>
+<div class="flower" style="left:25%; animation-delay:2s;">🌼</div>
+<div class="flower" style="left:40%; animation-delay:4s;">🌼</div>
+<div class="flower" style="left:60%; animation-delay:1s;">🌼</div>
+<div class="flower" style="left:75%; animation-delay:3s;">🌼</div>
+<div class="flower" style="left:90%; animation-delay:5s;">🌼</div>
+
+<script>
+function abrir() {
+  document.getElementById("carta").classList.add("show");
+  document.querySelector("button").style.display = "none";
+  document.getElementById("musica").play();
+}
+</script>
+
+</body>
+</html>
